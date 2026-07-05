@@ -2,21 +2,21 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:        #0f1117;
-  --surface:   #1a1d27;
-  --surface2:  #232736;
-  --border:    #2e3247;
+  --bg:        #ffffff;
+  --surface:   #f5f5f5;
+  --surface2:  #ebebeb;
+  --border:    #d0d0d0;
   --accent:    #6c63ff;
   --accent-h:  #8b85ff;
-  --text:      #e2e5f0;
-  --muted:     #7b82a0;
+  --text:      #1a1a2e;
+  --muted:     #555e7a;
   --danger:    #ff5c5c;
   --success:   #4caf7d;
   --radius:    10px;
-  --shadow:    0 4px 24px rgba(0,0,0,.4);
+  --shadow:    0 4px 24px rgba(0,0,0,.1);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
 
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
@@ -57,9 +57,9 @@ body {
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
 .btn-ghost-light {
-  background: rgba(255,255,255,.08);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(108,99,255,.1);
+  color: var(--accent);
+  border: 1px solid rgba(108,99,255,.3);
   border-radius: 8px;
   padding: 10px 22px;
   font-size: 14px;
@@ -69,7 +69,7 @@ body {
   display: inline-block;
   transition: all .2s;
 }
-.btn-ghost-light:hover { background: rgba(255,255,255,.15); }
+.btn-ghost-light:hover { background: rgba(108,99,255,.2); }
 
 .btn-large { padding: 14px 32px; font-size: 16px; }
 .btn-full  { width: 100%; text-align: center; }
@@ -79,7 +79,7 @@ body {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(15,17,23,.9);
+  background: rgba(255,255,255,.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -133,13 +133,13 @@ body {
   margin-left: auto;
 }
 
-/* BUG: mobile menu has no background color — links invisible */
 .mobile-menu {
   display: none;
   flex-direction: column;
   padding: 16px 24px;
   gap: 16px;
   border-top: 1px solid var(--border);
+  background: var(--bg);
 }
 
 .mobile-menu a {
@@ -185,7 +185,7 @@ body {
   display: flex;
   align-items: center;
   padding-top: 64px;
-  background: radial-gradient(ellipse at 60% 40%, #1e1b4b 0%, var(--bg) 70%);
+  background: radial-gradient(ellipse at 60% 40%, #ede9ff 0%, var(--bg) 70%);
 }
 
 .hero > * {
@@ -200,14 +200,13 @@ body {
 
 .hero-content { flex: 1; }
 
-/* BUG: hero title font size too large — overflows on mobile */
 .hero-title {
-  font-size: 72px;
+  font-size: clamp(36px, 7vw, 72px);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -2px;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #fff 40%, var(--accent));
+  background: linear-gradient(135deg, var(--text) 40%, var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -228,9 +227,9 @@ body {
   margin-bottom: 48px;
 }
 
-/* BUG: no gap between stat items — they all run together */
 .hero-stats {
   display: flex;
+  gap: 32px;
   border-top: 1px solid var(--border);
   padding-top: 32px;
 }
@@ -240,10 +239,9 @@ body {
   flex-direction: column;
   padding-right: 32px;
   border-right: 1px solid var(--border);
-  margin-right: 32px;
 }
 
-.stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.stat:last-child { border-right: none; padding-right: 0; }
 
 .stat-number {
   font-size: 28px;
@@ -265,7 +263,7 @@ body {
   border-radius: 16px;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  box-shadow: 0 20px 60px rgba(0,0,0,.1);
   overflow: hidden;
 }
 
@@ -313,15 +311,15 @@ body {
 /* ── Features ─────────────────────────────────── */
 .features { background: var(--surface); }
 
-/* BUG: no gap between feature cards — they are touching */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
   margin-top: 48px;
 }
 
 .feature-card {
-  background: var(--surface2);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 28px;
@@ -363,7 +361,6 @@ body {
   position: relative;
 }
 
-/* BUG: step number overlaps the title text */
 .step-number {
   width: 44px;
   height: 44px;
@@ -377,8 +374,7 @@ body {
   justify-content: center;
   flex-shrink: 0;
   position: relative;
-  left: 0px;
-  top: -8px;
+  top: 0;
 }
 
 .step-body h3 {
@@ -398,7 +394,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 48px;
-  /* BUG: align-items not set — cards are different heights, not aligned */
+  align-items: stretch;
 }
 
 .pricing-card {
@@ -414,7 +410,7 @@ body {
 
 .pricing-card.featured {
   border-color: var(--accent);
-  background: linear-gradient(180deg, rgba(108,99,255,.08) 0%, var(--surface) 100%);
+  background: linear-gradient(180deg, rgba(108,99,255,.06) 0%, var(--surface) 100%);
 }
 
 .plan-badge {
@@ -461,7 +457,7 @@ body {
   color: var(--muted);
 }
 
-.plan-features li:first-child ~ li { }
+.plan-features li.unavailable { color: var(--danger); }
 
 /* ── Testimonials ─────────────────────────────── */
 .testimonials { background: var(--surface); }
@@ -474,7 +470,7 @@ body {
 }
 
 .testimonial-card {
-  background: var(--surface2);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 28px;
@@ -483,11 +479,10 @@ body {
   gap: 20px;
 }
 
-/* BUG: testimonial text color is same as card background — invisible */
 .testimonial-text {
   font-size: 15px;
   line-height: 1.7;
-  color: #232736;
+  color: var(--text);
   font-style: italic;
 }
 
@@ -523,7 +518,7 @@ body {
 
 /* ── CTA ──────────────────────────────────────── */
 .cta {
-  background: radial-gradient(ellipse at center, #1e1b4b 0%, var(--bg) 70%);
+  background: radial-gradient(ellipse at center, #ede9ff 0%, var(--bg) 70%);
   text-align: center;
 }
 
@@ -588,9 +583,9 @@ body {
   margin-bottom: 4px;
 }
 
-/* BUG: footer links have no color set — invisible against dark background */
 .footer-col a {
   font-size: 14px;
+  color: var(--muted);
   text-decoration: none;
   transition: color .2s;
 }
