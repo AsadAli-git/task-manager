@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — Get Things Done</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">TaskFlow</div>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How it Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html" class="btn-outline">Login</a>
+        <a href="index.html" class="btn-solid">Get Started Free</a>
+      </div>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+    </div>
+    <!-- BUG: mobile menu has no background so links are invisible on mobile -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="index.html">Login</a>
+      <a href="index.html">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <!-- BUG: hero headline font size is 72px on all screens including mobile — overflows -->
+      <h1 class="hero-title">Manage Tasks.<br />Ship Faster.</h1>
+      <p class="hero-subtitle">
+        TaskFlow helps teams organize work, track progress, and deliver
+        results — all in one place. No more missed deadlines.
+      </p>
+      <div class="hero-actions">
+        <a href="index.html" class="btn-solid btn-large">Start for Free</a>
+        <a href="#how-it-works" class="btn-ghost-light btn-large">Watch Demo</a>
+      </div>
+      <!-- BUG: stats bar has no gap between items — they all merge together -->
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">12k+</span>
+          <span class="stat-label">Active Users</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Satisfaction</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">4.9★</span>
+          <span class="stat-label">App Rating</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="app-mockup">
+        <div class="mockup-bar">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="mockup-content">
+          <div class="mockup-task done">✓ Set up project structure</div>
+          <div class="mockup-task active">⟳ Write API documentation</div>
+          <div class="mockup-task">○ Add authentication</div>
+          <div class="mockup-task">○ Deploy to production</div>
+          <div class="mockup-task">○ Write test coverage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="section-container">
+      <div class="section-label">Features</div>
+      <h2 class="section-title">Everything your team needs</h2>
+      <p class="section-subtitle">Built for developers, designers, and managers who ship.</p>
+
+      <!-- BUG: feature cards grid has no gap — cards are touching each other -->
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Lightning Fast</h3>
+          <p>Create and assign tasks in seconds. No bloated UI, no learning curve.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure by Default</h3>
+          <p>JWT authentication, role-based access, and encrypted data at rest.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Real-time Progress</h3>
+          <p>Track task status across your whole team with live updates.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔗</div>
+          <h3>API First</h3>
+          <p>Full REST API. Integrate with any tool in your stack.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Works Everywhere</h3>
+          <p>Responsive design. Works on desktop, tablet, and mobile.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Priority System</h3>
+          <p>High, medium, low priorities with visual indicators and filters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="section-container">
+      <div class="section-label">How it Works</div>
+      <h2 class="section-title">Up and running in 3 steps</h2>
+
+      <div class="steps">
+        <div class="step">
+          <!-- BUG: step number overlaps step title because position is wrong -->
+          <div class="step-number">1</div>
+          <div class="step-body">
+            <h3>Create your account</h3>
+            <p>Sign up in seconds. No credit card required. Free forever for individuals.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-body">
+            <h3>Add your tasks</h3>
+            <p>Create tasks, set priorities, assign due dates. Import from other tools.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-body">
+            <h3>Track and ship</h3>
+            <p>Monitor progress, filter by status, and mark tasks complete as you go.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="section-container">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">Simple, honest pricing</h2>
+      <p class="section-subtitle">No hidden fees. Cancel anytime.</p>
+
+      <!-- BUG: pricing cards are not vertically aligned — pro card is taller
+           but cards don't stretch to equal height -->
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="plan-name">Free</div>
+          <div class="plan-price">$0<span>/month</span></div>
+          <ul class="plan-features">
+            <li>✓ Up to 10 tasks</li>
+            <li>✓ 1 user</li>
+            <li>✓ Basic filtering</li>
+            <li>✗ API access</li>
+            <li>✗ Priority support</li>
+          </ul>
+          <a href="index.html" class="btn-outline btn-full">Get Started</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="plan-badge">Most Popular</div>
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">$12<span>/month</span></div>
+          <ul class="plan-features">
+            <li>✓ Unlimited tasks</li>
+            <li>✓ Up to 10 users</li>
+            <li>✓ Advanced filters</li>
+            <li>✓ Full API access</li>
+            <li>✓ Priority support</li>
+            <li>✓ Custom due date reminders</li>
+            <li>✓ Export to CSV</li>
+          </ul>
+          <a href="index.html" class="btn-solid btn-full">Start Free Trial</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-price">$49<span>/month</span></div>
+          <ul class="plan-features">
+            <li>✓ Everything in Pro</li>
+            <li>✓ Unlimited users</li>
+            <li>✓ SSO & SAML</li>
+            <li>✓ Audit logs</li>
+            <li>✓ SLA guarantee</li>
+          </ul>
+          <a href="index.html" class="btn-outline btn-full">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-container">
+      <div class="section-label">Reviews</div>
+      <h2 class="section-title">Loved by teams worldwide</h2>
+
+      <!-- BUG: testimonial cards have text color same as background — invisible -->
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "TaskFlow replaced three different tools we were using.
+            Our team ships 40% faster now."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AJ</div>
+            <div>
+              <div class="author-name">Alex Johnson</div>
+              <div class="author-role">CTO, Startup Inc.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "The API is clean, the UI is fast, and the team actually
+            responds to support tickets. Rare combo."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SR</div>
+            <div>
+              <div class="author-name">Sara Rivera</div>
+              <div class="author-role">Lead Developer, Agency Co.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "We've tried everything. TaskFlow is the first tool
+            our whole team actually uses every day."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MK</div>
+            <div>
+              <div class="author-name">Mike Kim</div>
+              <div class="author-role">Product Manager, Tech Corp.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="section-container">
+      <h2>Ready to get things done?</h2>
+      <p>Join 12,000+ teams already using TaskFlow.</p>
+      <a href="index.html" class="btn-solid btn-large">Start for Free — No Card Needed</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <!-- BUG: footer links have no color — they are invisible against dark background -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">TaskFlow</div>
+        <p>The task manager built for teams that ship.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Changelog</a>
+          <a href="#">Roadmap</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TaskFlow. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="home.js"></script>
+</body>
+</html>
