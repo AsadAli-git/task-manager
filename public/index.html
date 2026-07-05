@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- AUTH SCREEN -->
+  <div id="auth-screen" class="screen active">
+    <div class="auth-box">
+      <h1 class="logo">TaskFlow</h1>
+      <p class="tagline">Stay on top of everything.</p>
+
+      <div class="tab-row">
+        <button class="tab active" data-tab="login">Login</button>
+        <button class="tab" data-tab="register">Register</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form" class="auth-form active">
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="login-email" placeholder="alice@example.com" required />
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" id="login-password" placeholder="password123" required />
+        </div>
+        <div id="login-error" class="error-msg hidden"></div>
+        <button type="submit" class="btn-primary">Login</button>
+        <p class="hint">Demo: alice@example.com / password123</p>
+      </form>
+
+      <!-- Register Form -->
+      <form id="register-form" class="auth-form">
+        <div class="field">
+          <label>Name</label>
+          <input type="text" id="reg-name" placeholder="Your name" required />
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="reg-email" placeholder="you@example.com" required />
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" id="reg-password" placeholder="Min 6 characters" required />
+        </div>
+        <div id="register-error" class="error-msg hidden"></div>
+        <button type="submit" class="btn-primary">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- DASHBOARD SCREEN -->
+  <div id="dashboard-screen" class="screen">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">TaskFlow</div>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-view="all">All Tasks</a>
+        <a href="#" class="nav-item" data-view="my">My Tasks</a>
+        <a href="#" class="nav-item" data-view="pending">Pending</a>
+        <a href="#" class="nav-item" data-view="in-progress">In Progress</a>
+        <a href="#" class="nav-item" data-view="completed">Completed</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div id="user-info" class="user-chip"></div>
+        <button id="logout-btn" class="btn-ghost">Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h2 id="view-title">All Tasks</h2>
+          <span id="task-count" class="badge">0</span>
+        </div>
+        <div class="topbar-right">
+          <input type="text" id="search-input" class="search-box" placeholder="Search tasks..." />
+          <select id="priority-filter" class="select-box">
+            <option value="">All Priorities</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <button id="new-task-btn" class="btn-primary">+ New Task</button>
+        </div>
+      </header>
+
+      <div id="task-list" class="task-list">
+        <div class="loading">Loading tasks...</div>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL: Create / Edit Task -->
+  <div id="task-modal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title">New Task</h3>
+        <button class="modal-close" id="close-modal">&times;</button>
+      </div>
+      <form id="task-form">
+        <input type="hidden" id="task-id" />
+        <div class="field">
+          <label>Title <span class="required">*</span></label>
+          <input type="text" id="task-title" placeholder="What needs to be done?" required />
+        </div>
+        <div class="field">
+          <label>Description</label>
+          <textarea id="task-desc" placeholder="Add more details..." rows="3"></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Priority</label>
+            <select id="task-priority">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Status</label>
+            <select id="task-status">
+              <option value="pending">Pending</option>
+              <option value="in-progress">In Progress</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Due Date</label>
+          <input type="date" id="task-due" />
+        </div>
+        <div id="task-error" class="error-msg hidden"></div>
+        <div class="modal-actions">
+          <button type="button" class="btn-ghost" id="cancel-task">Cancel</button>
+          <button type="submit" class="btn-primary" id="save-task-btn">Save Task</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST notification -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
